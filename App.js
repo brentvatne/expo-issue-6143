@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import scrypt from 'react-native-scrypt';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-});
+const password = 'correct horse battery staple'
+const salt = [0, 1, 2];
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
+export default function App() {
+  let [result, setResult] = React.useState(null);
+
+  React.useEffect(() => {
+    async function runScrypt() {
+      let value = await scrypt(password, salt)
+      setResult(value);
+    }
+
+    runScrypt();
+  });
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>{result ? result : 'Waiting...'}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -5572,6 +5572,11 @@ react-native-screens@1.0.0-alpha.23:
   dependencies:
     debounce "^1.2.0"
 
+react-native-scrypt@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-scrypt/-/react-native-scrypt-1.0.0.tgz#c397c951fa53b0a6b82f6da980bb3b090cd961e4"
+  integrity sha512-ZEcoqaQ5I4J/xAv3mlm7tdDDCOZuMbhljx00mc7IxZZ78fZQYGt3BX+pFRNSnFIxQm3oUWo3HhaoFTMjGob76w==
+
 react-native-unimodules@0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/react-native-unimodules/-/react-native-unimodules-0.6.0.tgz#f62c753705f4b97ba19e2834d8ad3357e204537c"
